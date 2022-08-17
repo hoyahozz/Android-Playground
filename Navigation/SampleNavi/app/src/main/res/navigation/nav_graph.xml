@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="co.kr.hoyaho.samplenavi.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="co.kr.hoyaho.samplenavi.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+
+        <argument
+            android:name="arg_number"
+            app:argType="integer"
+            android:defaultValue="5"/>
+
+        <action
+            android:id="@+id/before_action"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+    </fragment>
+</navigation>
